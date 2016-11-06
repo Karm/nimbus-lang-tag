@@ -10,6 +10,9 @@ Source0:       https://bitbucket.org/connect2id/nimbus-language-tags/get/%{versi
 
 BuildRequires: maven-local
 BuildRequires: mvn(net.minidev:json-smart)
+BuildRequires: mvn(org.apache.felix:maven-bundle-plugin)
+BuildRequires: mvn(org.codehaus.mojo:buildnumber-maven-plugin)
+BuildRequires: mvn(org.sonatype.oss:oss-parent:pom:)
 BuildArch:     noarch
 
 %description
@@ -21,7 +24,7 @@ and grandfathered tags beginning with "i" are not supported.
 Summary:       Javadoc for %{name}
 
 %description javadoc
-This package contains javadoc for %{name}.
+This package contains javadoc for %{name}
 
 %prep
 %setup -n connect2id-nimbus-language-tags-%{GitCommit}
@@ -32,7 +35,7 @@ This package contains javadoc for %{name}.
 
 %build
 
-%mvn_build -s
+%mvn_build
 
 %install
 %mvn_install
